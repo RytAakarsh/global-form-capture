@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
@@ -29,8 +29,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   businessName: z.string().min(2, "Business name must be at least 2 characters"),
@@ -82,23 +80,12 @@ const europeanProvinces = [
   "Lombardy", "Catalonia", "Madrid", "Andalusia"
 ];
 
-export const MerchantForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState<string>("");
+interface MerchantFormProps {
+  form: UseFormReturn<any>;
+}
 
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      businessName: "",
-      businessEmail: "",
-      businessAddress: "",
-      federalTaxId: "",
-      stateProvince: "",
-      city: "",
-      zipPostalCode: "",
-      businessDescription: "",
-    },
-  });
+export const MerchantForm = ({ form }: MerchantFormProps) => {
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
 
   const getStatesForCountry = (country: string) => {
     if (country === "United States") return usStates;
@@ -106,78 +93,8 @@ export const MerchantForm = () => {
     return europeanProvinces;
   };
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    try {
-      // Insert into database
-      const { error: dbError } = await supabase
-        .from("merchant_submissions")
-        .insert({
-          business_name: data.businessName,
-          business_email: data.businessEmail,
-          business_address: data.businessAddress,
-          federal_tax_id: data.federalTaxId,
-          corporation_date: format(data.corporationDate, "yyyy-MM-dd"),
-          business_type: data.businessType,
-          country: data.country,
-          state_province: data.stateProvince,
-          city: data.city,
-          zip_postal_code: data.zipPostalCode,
-          business_description: data.businessDescription,
-        });
-
-      if (dbError) throw dbError;
-
-      // Send email notification
-      const { error: emailError } = await supabase.functions.invoke(
-        "send-merchant-email",
-        {
-          body: {
-            businessName: data.businessName,
-            businessEmail: data.businessEmail,
-            businessAddress: data.businessAddress,
-            federalTaxId: data.federalTaxId,
-            corporationDate: format(data.corporationDate, "PPP"),
-            businessType: data.businessType,
-            country: data.country,
-            stateProvince: data.stateProvince,
-            city: data.city,
-            zipPostalCode: data.zipPostalCode,
-            businessDescription: data.businessDescription,
-          },
-        }
-      );
-
-      if (emailError) {
-        console.error("Email error:", emailError);
-        // Don't throw - form was saved successfully
-      }
-
-      toast.success("Form submitted successfully!", {
-        description: "Your merchant application has been received.",
-      });
-      
-      form.reset();
-      setSelectedCountry("");
-    } catch (error) {
-      console.error("Form submission error:", error);
-      toast.error("Failed to submit form", {
-        description: "Please try again later.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <div className="w-full max-w-4xl mx-auto bg-card rounded-lg p-8 shadow-[var(--form-shadow)]">
-      <div className="mb-6">
-        <h2 className="text-3xl font-bold text-foreground mb-2">Merchant Form</h2>
-        <div className="h-1 w-full bg-gradient-to-r from-primary via-secondary to-accent rounded-full" />
-      </div>
-
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="space-y-6">
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
               Business & Address
@@ -423,16 +340,6 @@ export const MerchantForm = () => {
               )}
             />
           </div>
-
-          <Button
-            type="submit"
-            className="w-full md:w-auto bg-primary hover:bg-primary/90"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Next"}
-          </Button>
-        </form>
-      </Form>
-    </div>
+        </div>
   );
 };

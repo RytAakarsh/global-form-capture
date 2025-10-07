@@ -16,51 +16,120 @@ export type Database = {
     Tables: {
       merchant_submissions: {
         Row: {
+          account_type: string | null
+          bank_contact_email: string | null
+          bank_name: string | null
+          bank_swift: string | null
           business_address: string
           business_description: string
           business_email: string
           business_name: string
           business_type: string
           city: string
+          confirm_deposit_account: string | null
           corporation_date: string
           country: string
           created_at: string
+          customer_service_no: string | null
+          deposit_account: string | null
           federal_tax_id: string
+          has_co_owner: boolean | null
           id: string
+          owner_date_of_birth: string | null
+          owner_dl: string | null
+          owner_dl_state_country: string | null
+          owner_home_address: string | null
+          owner_home_city: string | null
+          owner_home_country: string | null
+          owner_home_zip_postal_code: string | null
+          owner_name: string | null
+          owner_passport: string | null
+          owner_passport_2: string | null
+          owner_phone_number: string | null
+          owner_skype_id: string | null
+          ownership_percentage: string | null
+          settlement_transit_aba: string | null
           state_province: string
           updated_at: string
+          web_address: string | null
           zip_postal_code: string
         }
         Insert: {
+          account_type?: string | null
+          bank_contact_email?: string | null
+          bank_name?: string | null
+          bank_swift?: string | null
           business_address: string
           business_description: string
           business_email: string
           business_name: string
           business_type: string
           city: string
+          confirm_deposit_account?: string | null
           corporation_date: string
           country: string
           created_at?: string
+          customer_service_no?: string | null
+          deposit_account?: string | null
           federal_tax_id: string
+          has_co_owner?: boolean | null
           id?: string
+          owner_date_of_birth?: string | null
+          owner_dl?: string | null
+          owner_dl_state_country?: string | null
+          owner_home_address?: string | null
+          owner_home_city?: string | null
+          owner_home_country?: string | null
+          owner_home_zip_postal_code?: string | null
+          owner_name?: string | null
+          owner_passport?: string | null
+          owner_passport_2?: string | null
+          owner_phone_number?: string | null
+          owner_skype_id?: string | null
+          ownership_percentage?: string | null
+          settlement_transit_aba?: string | null
           state_province: string
           updated_at?: string
+          web_address?: string | null
           zip_postal_code: string
         }
         Update: {
+          account_type?: string | null
+          bank_contact_email?: string | null
+          bank_name?: string | null
+          bank_swift?: string | null
           business_address?: string
           business_description?: string
           business_email?: string
           business_name?: string
           business_type?: string
           city?: string
+          confirm_deposit_account?: string | null
           corporation_date?: string
           country?: string
           created_at?: string
+          customer_service_no?: string | null
+          deposit_account?: string | null
           federal_tax_id?: string
+          has_co_owner?: boolean | null
           id?: string
+          owner_date_of_birth?: string | null
+          owner_dl?: string | null
+          owner_dl_state_country?: string | null
+          owner_home_address?: string | null
+          owner_home_city?: string | null
+          owner_home_country?: string | null
+          owner_home_zip_postal_code?: string | null
+          owner_name?: string | null
+          owner_passport?: string | null
+          owner_passport_2?: string | null
+          owner_phone_number?: string | null
+          owner_skype_id?: string | null
+          ownership_percentage?: string | null
+          settlement_transit_aba?: string | null
           state_province?: string
           updated_at?: string
+          web_address?: string | null
           zip_postal_code?: string
         }
         Relationships: []

@@ -1,4 +1,4 @@
-import { MerchantForm } from "@/components/MerchantForm";
+import { MerchantMultiStepForm } from "@/components/MerchantMultiStepForm";
 
 const Index = () => {
   return (
@@ -8,7 +8,7 @@ const Index = () => {
         background: "var(--gradient-primary)",
       }}
     >
-      <MerchantForm />
+      <MerchantMultiStepForm />
     </div>
   );
 };
