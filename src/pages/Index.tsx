@@ -66,15 +66,26 @@ const Index = () => {
     >
       {/* Animated mesh background */}
       <div 
-        className="absolute inset-0 opacity-50"
+        className="absolute inset-0"
         style={{
           background: "var(--gradient-mesh)",
         }}
       />
       
-      {/* Floating orbs */}
-      <div className="absolute top-10 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1.5s" }} />
+      {/* Gradient orbs */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-3xl" />
+      
+      {/* Grid pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
+                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px',
+        }}
+      />
       
       <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end relative z-10">
         <Button 
