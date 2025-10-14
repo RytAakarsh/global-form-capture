@@ -135,37 +135,50 @@ export const MerchantMultiStepForm = () => {
   const progressPercentage = (currentStep / 4) * 100;
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-card rounded-lg p-8 shadow-[var(--form-shadow)]">
-      <div className="mb-6">
-        <h2 className="text-3xl font-bold text-foreground mb-4">Merchant Form</h2>
-        <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+    <div className="w-full max-w-5xl mx-auto backdrop-blur-2xl rounded-3xl p-8 md:p-10 shadow-2xl border border-white/20 animate-fade-in-up" style={{ background: "var(--gradient-card)" }}>
+      <div className="mb-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+            Merchant Application
+          </h2>
+          <div className="text-sm font-medium text-muted-foreground bg-muted/50 px-4 py-2 rounded-full backdrop-blur-sm">
+            Step {currentStep} of 4
+          </div>
+        </div>
+        <div className="relative h-3 w-full bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
           <div
-            className="h-full bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-300"
-            style={{ width: `${progressPercentage}%` }}
+            className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-500 ease-out rounded-full shadow-lg"
+            style={{ 
+              width: `${progressPercentage}%`,
+              boxShadow: "0 0 20px hsl(var(--primary) / 0.5)"
+            }}
           />
         </div>
       </div>
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          {currentStep === 1 && <MerchantForm form={form} />}
-          {currentStep === 2 && <BusinessOwnershipStep form={form} />}
-          {currentStep === 3 && <BankInformationStep form={form} />}
-          {currentStep === 4 && <ReviewStep data={form.getValues()} />}
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <div className="min-h-[500px] animate-fade-in">
+            {currentStep === 1 && <MerchantForm form={form} />}
+            {currentStep === 2 && <BusinessOwnershipStep form={form} />}
+            {currentStep === 3 && <BankInformationStep form={form} />}
+            {currentStep === 4 && <ReviewStep data={form.getValues()} />}
+          </div>
 
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-4 pt-6 border-t border-white/10">
             {currentStep > 1 && (
               <Button
                 type="button"
                 variant="outline"
                 onClick={() => setCurrentStep(currentStep - 1)}
+                className="h-12 px-8 border-white/20 backdrop-blur-sm hover:bg-white/5 transition-all"
               >
                 BACK
               </Button>
             )}
             <Button
               type="submit"
-              className="ml-auto bg-primary hover:bg-primary/90"
+              className="ml-auto h-12 px-8 bg-gradient-to-r from-primary via-secondary to-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]"
               disabled={isSubmitting}
             >
               {currentStep < 4 ? "NEXT" : isSubmitting ? "Submitting..." : "SUBMIT"}

@@ -94,11 +94,14 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
   };
 
   return (
-        <div className="space-y-6">
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-              Business & Address
-            </h3>
+        <div className="space-y-8">
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="h-1 w-12 bg-gradient-to-r from-primary to-secondary rounded-full" />
+              <h3 className="text-lg font-bold text-foreground">
+                Business & Address Information
+              </h3>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField
