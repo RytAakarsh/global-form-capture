@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { Building2, Sparkles } from "lucide-react";
 import { z } from "zod";
+import authBg from "@/assets/auth-bg.jpg";
 
 const authSchema = z.object({
   email: z.string().email("Please enter a valid email address").max(255),
@@ -126,30 +127,28 @@ const Auth = () => {
         background: "var(--gradient-primary)",
       }}
     >
-      {/* Animated mesh background */}
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${authBg})`,
+          opacity: 0.15,
+        }}
+      />
+      
+      {/* Vignette overlay */}
       <div 
         className="absolute inset-0"
         style={{
-          background: "var(--gradient-mesh)",
+          background: "var(--vignette)",
         }}
       />
       
-      {/* Gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-3xl" />
+      {/* Subtle accent lights */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       
-      {/* Grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }}
-      />
-      
-      <Card className="w-full max-w-md relative backdrop-blur-xl border-white/20 shadow-2xl animate-scale-in" style={{ background: "var(--glass-bg)" }}>
+      <Card className="w-full max-w-md relative backdrop-blur-xl shadow-2xl animate-scale-in border-white/10" style={{ background: "var(--glass-bg)" }}>
         <CardHeader className="space-y-4 pb-6">
           <div className="flex items-center justify-center mb-2">
             <div className="p-4 rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-lg">
@@ -159,14 +158,14 @@ const Auth = () => {
           <CardTitle className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
             Merchant Portal
           </CardTitle>
-          <CardDescription className="text-center text-base flex items-center justify-center gap-2">
+          <CardDescription className="text-center text-base flex items-center justify-center gap-2 text-muted-foreground">
             <Sparkles className="h-4 w-4" />
             Access your merchant application
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="signin" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 p-1 bg-muted/50">
+            <TabsList className="grid w-full grid-cols-2 p-1 bg-muted/30">
               <TabsTrigger value="signin" className="rounded-lg data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:to-secondary data-[state=active]:text-white transition-all">
                 Sign In
               </TabsTrigger>
@@ -186,7 +185,7 @@ const Auth = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-11 border-white/20 bg-white/50 backdrop-blur-sm focus:border-primary transition-all"
+                    className="h-11 bg-background/50 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <div className="space-y-2">
@@ -198,7 +197,7 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="h-11 border-white/20 bg-white/50 backdrop-blur-sm focus:border-primary transition-all"
+                    className="h-11 bg-background/50 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <Button 
@@ -222,7 +221,7 @@ const Auth = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-11 border-white/20 bg-white/50 backdrop-blur-sm focus:border-primary transition-all"
+                    className="h-11 bg-background/50 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <div className="space-y-2">
@@ -234,7 +233,7 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="h-11 border-white/20 bg-white/50 backdrop-blur-sm focus:border-primary transition-all"
+                    className="h-11 bg-background/50 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <Button 

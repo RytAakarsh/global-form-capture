@@ -5,6 +5,7 @@ import { User } from "@supabase/supabase-js";
 import { MerchantMultiStepForm } from "@/components/MerchantMultiStepForm";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import authBg from "@/assets/auth-bg.jpg";
 
 const Index = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -64,34 +65,32 @@ const Index = () => {
         background: "var(--gradient-primary)",
       }}
     >
-      {/* Animated mesh background */}
+      {/* Background image with overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${authBg})`,
+          opacity: 0.12,
+        }}
+      />
+      
+      {/* Vignette overlay */}
       <div 
         className="absolute inset-0"
         style={{
-          background: "var(--gradient-mesh)",
+          background: "var(--vignette)",
         }}
       />
       
-      {/* Gradient orbs */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-3xl" />
-      
-      {/* Grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                           linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
-        }}
-      />
+      {/* Subtle accent lights */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       
       <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end relative z-10">
         <Button 
           onClick={handleSignOut}
           variant="outline"
-          className="backdrop-blur-xl bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all hover:scale-105 shadow-lg"
+          className="backdrop-blur-xl bg-background/20 border-white/10 hover:bg-background/30 transition-all hover:scale-105 shadow-lg"
         >
           Sign Out
         </Button>
