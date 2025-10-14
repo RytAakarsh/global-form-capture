@@ -69,9 +69,17 @@ export const MerchantMultiStepForm = () => {
 
     setIsSubmitting(true);
     try {
+      // Get authenticated user
+      const { data: { user }, error: userError } = await supabase.auth.getUser();
+      
+      if (userError || !user) {
+        throw new Error("You must be logged in to submit a form");
+      }
+
       const { error: dbError } = await supabase
         .from("merchant_submissions")
         .insert({
+          user_id: user.id,
           business_name: data.businessName,
           business_email: data.businessEmail,
           business_address: data.businessAddress,
@@ -117,8 +125,8 @@ export const MerchantMultiStepForm = () => {
       toast.success("Form submitted successfully!");
       form.reset();
       setCurrentStep(1);
-    } catch (error) {
-      toast.error("Failed to submit form");
+    } catch (error: any) {
+      toast.error(error.message || "Failed to submit form");
     } finally {
       setIsSubmitting(false);
     }

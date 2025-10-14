@@ -51,6 +51,7 @@ export type Database = {
           settlement_transit_aba: string | null
           state_province: string
           updated_at: string
+          user_id: string | null
           web_address: string | null
           zip_postal_code: string
         }
@@ -90,6 +91,7 @@ export type Database = {
           settlement_transit_aba?: string | null
           state_province: string
           updated_at?: string
+          user_id?: string | null
           web_address?: string | null
           zip_postal_code: string
         }
@@ -129,6 +131,7 @@ export type Database = {
           settlement_transit_aba?: string | null
           state_province?: string
           updated_at?: string
+          user_id?: string | null
           web_address?: string | null
           zip_postal_code?: string
         }
