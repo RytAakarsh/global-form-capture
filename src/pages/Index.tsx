@@ -6,7 +6,7 @@ import { MerchantMultiStepForm } from "@/components/MerchantMultiStepForm";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import authBg from "@/assets/auth-bg.jpg";
+import { FloatingOrbs } from "@/components/FloatingOrbs";
 
 const Index = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -62,37 +62,23 @@ const Index = () => {
   return (
     <div 
       className="min-h-screen w-full flex flex-col p-4 md:p-8 relative overflow-hidden"
-      style={{
-        background: "var(--gradient-primary)",
-      }}
+      style={{ background: "var(--gradient-primary)" }}
     >
-      {/* Background image with overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${authBg})`,
-          opacity: 0.12,
-        }}
-      />
+      {/* Animated floating orbs */}
+      <FloatingOrbs />
       
       {/* Vignette overlay */}
       <div 
-        className="absolute inset-0"
-        style={{
-          background: "var(--vignette)",
-        }}
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "var(--vignette)" }}
       />
       
-      {/* Subtle accent lights */}
-      <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      
-      <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end gap-2 relative z-10">
+      <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end gap-3 relative z-10">
         <ThemeToggle />
         <Button 
           onClick={handleSignOut}
           variant="outline"
-          className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg"
+          className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg font-semibold"
         >
           Sign Out
         </Button>
