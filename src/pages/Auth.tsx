@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Building2, Sparkles } from "lucide-react";
 import { z } from "zod";
 import authBg from "@/assets/auth-bg.jpg";
@@ -147,6 +148,11 @@ const Auth = () => {
       {/* Subtle accent lights */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      
+      {/* Theme toggle */}
+      <div className="absolute top-4 right-4 z-20">
+        <ThemeToggle />
+      </div>
       
       <Card className="w-full max-w-md relative backdrop-blur-xl shadow-2xl animate-scale-in border-white/10" style={{ background: "var(--glass-bg)" }}>
         <CardHeader className="space-y-4 pb-6">

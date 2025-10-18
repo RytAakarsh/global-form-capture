@@ -5,6 +5,7 @@ import { User } from "@supabase/supabase-js";
 import { MerchantMultiStepForm } from "@/components/MerchantMultiStepForm";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import authBg from "@/assets/auth-bg.jpg";
 
 const Index = () => {
@@ -86,11 +87,12 @@ const Index = () => {
       <div className="absolute top-20 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       
-      <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end relative z-10">
+      <div className="w-full max-w-5xl mx-auto mb-4 flex justify-end gap-2 relative z-10">
+        <ThemeToggle />
         <Button 
           onClick={handleSignOut}
           variant="outline"
-          className="backdrop-blur-xl bg-background/20 border-white/10 hover:bg-background/30 transition-all hover:scale-105 shadow-lg"
+          className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg"
         >
           Sign Out
         </Button>
