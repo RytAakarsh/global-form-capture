@@ -157,45 +157,45 @@ const Auth = () => {
         </div>
       </div>
       
-      <GlowingCard className="w-full max-w-2xl">
-        <CardHeader className="space-y-6 pb-8">
-          <div className="flex items-center justify-center mb-2">
+      <GlowingCard className="w-full max-w-md">
+        <CardHeader className="space-y-4 pb-6">
+          <div className="flex items-center justify-center mb-1">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-60 animate-pulse" />
-              <div className="relative p-5 lg:p-6 rounded-3xl bg-gradient-to-br from-primary via-secondary to-accent">
-                <Building2 className="h-10 w-10 lg:h-12 lg:w-12 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl blur-lg opacity-60 animate-pulse" />
+              <div className="relative p-3 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent">
+                <Building2 className="h-8 w-8 text-white" />
               </div>
             </div>
           </div>
-          <CardTitle className="text-3xl lg:text-4xl font-display font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-fade-in">
+          <CardTitle className="text-2xl font-display font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-fade-in">
             Merchant Portal
           </CardTitle>
-          <CardDescription className="text-center text-base lg:text-lg flex items-center justify-center gap-2 text-muted-foreground">
-            <Sparkles className="h-5 w-5 lg:h-6 lg:w-6 text-primary animate-pulse" />
+          <CardDescription className="text-center text-sm flex items-center justify-center gap-2 text-muted-foreground">
+            <Sparkles className="h-4 w-4 text-primary animate-pulse" />
             <span className="font-medium">Welcome to the future of business</span>
           </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="signin" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 p-1.5 lg:p-2 bg-muted/40 backdrop-blur-sm rounded-xl h-12 lg:h-14">
+            <TabsList className="grid w-full grid-cols-2 p-1 bg-muted/40 backdrop-blur-sm rounded-lg h-10">
               <TabsTrigger 
                 value="signin" 
-                className="rounded-lg text-sm lg:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:via-secondary data-[state=active]:to-accent data-[state=active]:text-white data-[state=active]:font-semibold transition-all data-[state=active]:shadow-lg font-medium"
+                className="rounded-md text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:via-secondary data-[state=active]:to-accent data-[state=active]:text-white data-[state=active]:font-semibold transition-all data-[state=active]:shadow-lg font-medium"
               >
                 Sign In
               </TabsTrigger>
               <TabsTrigger 
                 value="signup" 
-                className="rounded-lg text-sm lg:text-base data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:via-secondary data-[state=active]:to-accent data-[state=active]:text-white data-[state=active]:font-semibold transition-all data-[state=active]:shadow-lg font-medium"
+                className="rounded-md text-sm data-[state=active]:bg-gradient-to-r data-[state=active]:from-primary data-[state=active]:via-secondary data-[state=active]:to-accent data-[state=active]:text-white data-[state=active]:font-semibold transition-all data-[state=active]:shadow-lg font-medium"
               >
                 Sign Up
               </TabsTrigger>
             </TabsList>
             
             <TabsContent value="signin" className="animate-fade-in">
-              <form onSubmit={handleSignIn} className="space-y-5 lg:space-y-6 mt-6 lg:mt-8">
-                <div className="space-y-2 lg:space-y-3">
-                  <Label htmlFor="signin-email" className="text-sm lg:text-base font-semibold">Email Address</Label>
+              <form onSubmit={handleSignIn} className="space-y-4 mt-6">
+                <div className="space-y-2">
+                  <Label htmlFor="signin-email">Email Address</Label>
                   <Input
                     id="signin-email"
                     type="email"
@@ -203,11 +203,11 @@ const Auth = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all border-2 focus:ring-2 focus:ring-primary/20"
+                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
-                <div className="space-y-2 lg:space-y-3">
-                  <Label htmlFor="signin-password" className="text-sm lg:text-base font-semibold">Password</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="signin-password">Password</Label>
                   <Input
                     id="signin-password"
                     type="password"
@@ -215,12 +215,12 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all border-2 focus:ring-2 focus:ring-primary/20"
+                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full h-11 lg:h-12 bg-gradient-to-r from-primary via-secondary to-accent text-white font-bold text-base lg:text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02] relative overflow-hidden group" 
+                  className="w-full h-10 bg-gradient-to-r from-primary via-secondary to-accent text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] relative overflow-hidden group"
                   disabled={isLoading}
                   style={{ boxShadow: "var(--shadow-glow)" }}
                 >
@@ -231,9 +231,9 @@ const Auth = () => {
             </TabsContent>
             
             <TabsContent value="signup" className="animate-fade-in">
-              <form onSubmit={handleSignUp} className="space-y-5 lg:space-y-6 mt-6 lg:mt-8">
-                <div className="space-y-2 lg:space-y-3">
-                  <Label htmlFor="signup-email" className="text-sm lg:text-base font-semibold">Email Address</Label>
+              <form onSubmit={handleSignUp} className="space-y-4 mt-6">
+                <div className="space-y-2">
+                  <Label htmlFor="signup-email">Email Address</Label>
                   <Input
                     id="signup-email"
                     type="email"
@@ -241,11 +241,11 @@ const Auth = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all border-2 focus:ring-2 focus:ring-primary/20"
+                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
-                <div className="space-y-2 lg:space-y-3">
-                  <Label htmlFor="signup-password" className="text-sm lg:text-base font-semibold">Password</Label>
+                <div className="space-y-2">
+                  <Label htmlFor="signup-password">Password</Label>
                   <Input
                     id="signup-password"
                     type="password"
@@ -253,12 +253,12 @@ const Auth = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all border-2 focus:ring-2 focus:ring-primary/20"
+                    className="bg-background/60 backdrop-blur-sm focus:border-primary transition-all"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full h-11 lg:h-12 bg-gradient-to-r from-primary via-secondary to-accent text-white font-bold text-base lg:text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-[1.02] relative overflow-hidden group" 
+                  className="w-full h-10 bg-gradient-to-r from-primary via-secondary to-accent text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] relative overflow-hidden group"
                   disabled={isLoading}
                   style={{ boxShadow: "var(--shadow-glow)" }}
                 >

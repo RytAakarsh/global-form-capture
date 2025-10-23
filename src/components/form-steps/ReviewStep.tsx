@@ -6,21 +6,21 @@ interface ReviewStepProps {
 
 export const ReviewStep = ({ data }: ReviewStepProps) => {
   return (
-    <div className="space-y-6 lg:space-y-8">
-      <div className="flex items-center gap-3 lg:gap-4 mb-6">
-        <div className="h-1.5 lg:h-2 w-14 lg:w-18 bg-gradient-to-r from-primary to-secondary rounded-full" />
-        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-foreground">
+    <div className="space-y-4">
+      <div className="flex items-center gap-2 mb-4">
+        <div className="h-1 w-12 bg-gradient-to-r from-primary to-secondary rounded-full" />
+        <h3 className="text-lg font-bold text-foreground">
           Review Your Submission
         </h3>
       </div>
       
-      <div className="space-y-6 lg:space-y-8">
-        <div className="bg-muted/30 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10">
-          <h4 className="text-lg lg:text-xl xl:text-2xl font-semibold text-foreground mb-4 lg:mb-6 flex items-center gap-2 lg:gap-3">
-            <div className="h-2.5 w-2.5 lg:h-3 lg:w-3 bg-primary rounded-full" />
+      <div className="space-y-4">
+        <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+          <h4 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+            <div className="h-2 w-2 bg-primary rounded-full" />
             Business & Address Information
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 text-sm sm:text-base lg:text-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div>
             <span className="text-muted-foreground">Business Name:</span>
             <p className="font-medium">{data.businessName || "-"}</p>
@@ -71,13 +71,13 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
         </div>
       </div>
 
-      <div className="space-y-10 lg:space-y-14 xl:space-y-18">
-        <div className="bg-muted/30 backdrop-blur-sm rounded-2xl p-8 lg:p-12 xl:p-16 border border-white/10">
-          <h4 className="text-xl lg:text-3xl xl:text-4xl font-semibold text-foreground mb-6 lg:mb-10 flex items-center gap-3 lg:gap-4">
-            <div className="h-3 w-3 lg:h-4 lg:w-4 bg-secondary rounded-full" />
+      <div className="space-y-4">
+        <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+          <h4 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+            <div className="h-2 w-2 bg-secondary rounded-full" />
             Business Ownership
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7 lg:gap-10 xl:gap-14 text-base sm:text-lg lg:text-xl xl:text-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div>
             <span className="text-muted-foreground">Name:</span>
             <p className="font-medium">{data.ownerName || "-"}</p>
@@ -124,13 +124,13 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
         </div>
       </div>
 
-      <div className="space-y-10 lg:space-y-14 xl:space-y-18">
-        <div className="bg-muted/30 backdrop-blur-sm rounded-2xl p-8 lg:p-12 xl:p-16 border border-white/10">
-          <h4 className="text-xl lg:text-3xl xl:text-4xl font-semibold text-foreground mb-6 lg:mb-10 flex items-center gap-3 lg:gap-4">
-            <div className="h-3 w-3 lg:h-4 lg:w-4 bg-accent rounded-full" />
+      <div className="space-y-4">
+        <div className="bg-muted/30 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+          <h4 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+            <div className="h-2 w-2 bg-accent rounded-full" />
             Bank Information
           </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7 lg:gap-10 xl:gap-14 text-base sm:text-lg lg:text-xl xl:text-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div>
             <span className="text-muted-foreground">Bank Name:</span>
             <p className="font-medium">{data.bankName || "-"}</p>
