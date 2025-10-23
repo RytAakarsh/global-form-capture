@@ -25,16 +25,16 @@ interface BusinessOwnershipStepProps {
 
 export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
   return (
-    <div className="space-y-10 lg:space-y-14 xl:space-y-18">
-      <div className="flex items-center gap-4 lg:gap-6">
-        <div className="h-2 lg:h-3 xl:h-4 w-16 lg:w-24 xl:w-32 bg-gradient-to-r from-primary to-secondary rounded-full" />
-        <h3 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-foreground">
+    <div className="space-y-6 lg:space-y-8">
+      <div className="flex items-center gap-3 lg:gap-4">
+        <div className="h-1.5 lg:h-2 w-14 lg:w-18 bg-gradient-to-r from-primary to-secondary rounded-full" />
+        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-foreground">
           Business Ownership Details
         </h3>
       </div>
       
-      <div className="space-y-10 lg:space-y-14 xl:space-y-18">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
+      <div className="space-y-6 lg:space-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           <FormField
             control={form.control}
             name="ownerName"
