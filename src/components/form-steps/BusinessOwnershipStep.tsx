@@ -25,16 +25,16 @@ interface BusinessOwnershipStepProps {
 
 export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
   return (
-    <div className="space-y-6 lg:space-y-8 xl:space-y-10">
-      <div className="flex items-center gap-3 lg:gap-4">
-        <div className="h-1 lg:h-1.5 xl:h-2 w-12 lg:w-16 xl:w-20 bg-gradient-to-r from-primary to-secondary rounded-full" />
-        <h3 className="text-lg lg:text-2xl xl:text-3xl font-bold text-foreground">
+    <div className="space-y-10 lg:space-y-14 xl:space-y-18">
+      <div className="flex items-center gap-4 lg:gap-6">
+        <div className="h-2 lg:h-3 xl:h-4 w-16 lg:w-24 xl:w-32 bg-gradient-to-r from-primary to-secondary rounded-full" />
+        <h3 className="text-2xl lg:text-4xl xl:text-5xl font-bold text-foreground">
           Business Ownership Details
         </h3>
       </div>
       
-      <div className="space-y-6 lg:space-y-8 xl:space-y-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+      <div className="space-y-10 lg:space-y-14 xl:space-y-18">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <FormField
             control={form.control}
             name="ownerName"
@@ -78,7 +78,7 @@ export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <FormField
             control={form.control}
             name="ownershipPercentage"
@@ -122,7 +122,7 @@ export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <FormField
             control={form.control}
             name="ownerBusinessEmail"
@@ -195,7 +195,7 @@ export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <FormField
             control={form.control}
             name="ownerPhoneNumber"
@@ -239,7 +239,7 @@ export const BusinessOwnershipStep = ({ form }: BusinessOwnershipStepProps) => {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
           <FormField
             control={form.control}
             name="ownerSkypeId"
