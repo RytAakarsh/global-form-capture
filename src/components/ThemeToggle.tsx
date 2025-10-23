@@ -16,9 +16,9 @@ export function ThemeToggle() {
     <Button
       variant="outline"
       size="sm"
-      className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg h-8 w-8 sm:h-10 sm:w-10"
+      className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
     >
-      <Sun className="h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem]" />
+      <Sun className="h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem] lg:h-6 lg:w-6 xl:h-7 xl:w-7" />
       </Button>
     );
   }
@@ -28,10 +28,10 @@ export function ThemeToggle() {
       variant="outline"
       size="sm"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg relative overflow-hidden group h-8 w-8 sm:h-10 sm:w-10"
+      className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg relative overflow-hidden group h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 xl:h-14 xl:w-14"
     >
-      <Sun className="h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-primary" />
-      <Moon className="absolute h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-primary" />
+      <Sun className="h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem] lg:h-6 lg:w-6 xl:h-7 xl:w-7 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-primary" />
+      <Moon className="absolute h-3 w-3 sm:h-[1.2rem] sm:w-[1.2rem] lg:h-6 lg:w-6 xl:h-7 xl:w-7 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 text-primary" />
       <span className="sr-only">Toggle theme</span>
       
       {/* Glow effect */}

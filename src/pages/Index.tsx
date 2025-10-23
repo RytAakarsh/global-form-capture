@@ -73,13 +73,12 @@ const Index = () => {
         style={{ background: "var(--vignette)" }}
       />
       
-      <div className="w-full max-w-6xl mx-auto mb-3 sm:mb-4 flex justify-end gap-2 sm:gap-3 relative z-10">
+      <div className="w-full max-w-[90rem] mx-auto mb-3 sm:mb-4 lg:mb-6 flex justify-end gap-2 sm:gap-3 lg:gap-4 relative z-10">
         <ThemeToggle />
         <Button 
           onClick={handleSignOut}
           variant="outline"
-          size="sm"
-          className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg font-semibold text-xs sm:text-sm h-8 sm:h-10 px-3 sm:px-4"
+          className="backdrop-blur-xl bg-card/50 border-border/50 hover:bg-accent/20 transition-all hover:scale-105 shadow-lg font-semibold text-xs sm:text-sm lg:text-base xl:text-lg h-8 sm:h-10 lg:h-12 xl:h-14 px-3 sm:px-4 lg:px-6 xl:px-8"
         >
           Sign Out
         </Button>

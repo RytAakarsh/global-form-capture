@@ -95,15 +95,15 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
 
   return (
         <div className="space-y-8">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="h-1 w-12 bg-gradient-to-r from-primary to-secondary rounded-full" />
-              <h3 className="text-lg font-bold text-foreground">
+        <div className="space-y-6 lg:space-y-8 xl:space-y-10">
+            <div className="flex items-center gap-3 lg:gap-4">
+              <div className="h-1 lg:h-1.5 xl:h-2 w-12 lg:w-16 xl:w-20 bg-gradient-to-r from-primary to-secondary rounded-full" />
+              <h3 className="text-lg lg:text-2xl xl:text-3xl font-bold text-foreground">
                 Business & Address Information
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
               <FormField
                 control={form.control}
                 name="businessName"
@@ -147,7 +147,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               )}
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
               <FormField
                 control={form.control}
                 name="federalTaxId"
@@ -206,7 +206,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
               <FormField
                 control={form.control}
                 name="businessType"
@@ -265,7 +265,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
               <FormField
                 control={form.control}
                 name="stateProvince"
@@ -334,7 +334,6 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
                   <FormControl>
                     <Textarea
                       placeholder="Business Description"
-                      className="min-h-[100px]"
                       {...field}
                     />
                   </FormControl>

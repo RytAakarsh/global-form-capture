@@ -135,17 +135,17 @@ export const MerchantMultiStepForm = () => {
   const progressPercentage = (currentStep / 4) * 100;
 
   return (
-    <div className="w-full max-w-6xl mx-auto backdrop-blur-2xl rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 shadow-2xl border border-white/20 animate-fade-in-up" style={{ background: "var(--gradient-card)" }}>
-      <div className="mb-6 md:mb-8">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 gap-3">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+    <div className="w-full max-w-[90rem] mx-auto backdrop-blur-2xl rounded-3xl p-4 sm:p-6 md:p-10 lg:p-14 xl:p-16 shadow-2xl border border-white/20 animate-fade-in-up" style={{ background: "var(--gradient-card)" }}>
+      <div className="mb-6 md:mb-10 lg:mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 lg:mb-8 gap-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
             Merchant Application
           </h2>
-          <div className="text-xs sm:text-sm font-medium text-muted-foreground bg-muted/50 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm self-start">
+          <div className="text-xs sm:text-sm lg:text-base font-medium text-muted-foreground bg-muted/50 px-3 sm:px-4 lg:px-6 py-1.5 sm:py-2 lg:py-3 rounded-full backdrop-blur-sm self-start">
             Step {currentStep} of 4
           </div>
         </div>
-        <div className="relative h-3 w-full bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
+        <div className="relative h-3 lg:h-4 xl:h-5 w-full bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
           <div
             className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary via-secondary to-accent transition-all duration-500 ease-out rounded-full shadow-lg"
             style={{ 
@@ -158,27 +158,27 @@ export const MerchantMultiStepForm = () => {
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="min-h-[400px] sm:min-h-[500px] animate-fade-in">
+          <div className="min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] animate-fade-in">
             {currentStep === 1 && <MerchantForm form={form} />}
             {currentStep === 2 && <BusinessOwnershipStep form={form} />}
             {currentStep === 3 && <BankInformationStep form={form} />}
             {currentStep === 4 && <ReviewStep data={form.getValues()} />}
           </div>
 
-          <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 lg:gap-6 pt-4 sm:pt-6 lg:pt-10 border-t border-white/10">
             {currentStep > 1 && (
               <Button
                 type="button"
                 variant="outline"
                 onClick={() => setCurrentStep(currentStep - 1)}
-                className="h-10 sm:h-12 px-6 sm:px-8 border-white/20 backdrop-blur-sm hover:bg-white/5 transition-all text-sm sm:text-base"
+                className="h-10 sm:h-12 lg:h-14 xl:h-16 px-6 sm:px-8 lg:px-12 xl:px-16 border-white/20 backdrop-blur-sm hover:bg-white/5 transition-all text-sm sm:text-base lg:text-lg xl:text-xl font-semibold"
               >
                 BACK
               </Button>
             )}
             <Button
               type="submit"
-              className="ml-auto h-10 sm:h-12 px-6 sm:px-8 bg-gradient-to-r from-primary via-secondary to-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-sm sm:text-base"
+              className="ml-auto h-10 sm:h-12 lg:h-14 xl:h-16 px-6 sm:px-8 lg:px-12 xl:px-16 bg-gradient-to-r from-primary via-secondary to-accent text-white font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] text-sm sm:text-base lg:text-lg xl:text-xl"
               disabled={isSubmitting}
             >
               {currentStep < 4 ? "NEXT" : isSubmitting ? "Submitting..." : "SUBMIT"}
