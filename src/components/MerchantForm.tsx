@@ -103,7 +103,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               </h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="businessName"
@@ -147,7 +147,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               )}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="federalTaxId"
@@ -206,7 +206,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="businessType"
@@ -265,7 +265,7 @@ export const MerchantForm = ({ form }: MerchantFormProps) => {
               />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="stateProvince"

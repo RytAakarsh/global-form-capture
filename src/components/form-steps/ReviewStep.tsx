@@ -20,7 +20,7 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
             <div className="h-2 w-2 bg-primary rounded-full" />
             Business & Address Information
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
           <div>
             <span className="text-muted-foreground">Business Name:</span>
             <p className="font-medium">{data.businessName || "-"}</p>
@@ -29,7 +29,7 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
             <span className="text-muted-foreground">Business Email:</span>
             <p className="font-medium">{data.businessEmail || "-"}</p>
           </div>
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <span className="text-muted-foreground">Business Address:</span>
             <p className="font-medium">{data.businessAddress || "-"}</p>
           </div>
@@ -63,7 +63,7 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
             <span className="text-muted-foreground">Zip/Postal Code:</span>
             <p className="font-medium">{data.zipPostalCode || "-"}</p>
           </div>
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2">
             <span className="text-muted-foreground">Business Description:</span>
             <p className="font-medium">{data.businessDescription || "-"}</p>
           </div>
@@ -77,7 +77,7 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
             <div className="h-2 w-2 bg-secondary rounded-full" />
             Business Ownership
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
           <div>
             <span className="text-muted-foreground">Name:</span>
             <p className="font-medium">{data.ownerName || "-"}</p>
@@ -130,7 +130,7 @@ export const ReviewStep = ({ data }: ReviewStepProps) => {
             <div className="h-2 w-2 bg-accent rounded-full" />
             Bank Information
           </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm">
           <div>
             <span className="text-muted-foreground">Bank Name:</span>
             <p className="font-medium">{data.bankName || "-"}</p>

@@ -9,9 +9,9 @@ interface GlowingCardProps {
 export const GlowingCard = ({ children, className = "" }: GlowingCardProps) => {
   return (
     <div className="relative group">
-      {/* Animated glow effect */}
+      {/* Animated glow effect - responsive */}
       <div 
-        className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition duration-1000 animate-pulse"
+        className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-primary via-secondary to-accent rounded-xl sm:rounded-2xl blur-lg sm:blur-xl opacity-40 sm:opacity-50 group-hover:opacity-60 sm:group-hover:opacity-75 transition duration-1000 animate-pulse"
         style={{ animationDuration: '3s' }}
       />
       
